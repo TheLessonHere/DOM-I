@@ -60,3 +60,21 @@ ctaButton.textContent = siteContent['cta']['button'];
 
 let ctaImg = document.querySelector('.cta #cta-img');
 ctaImg.src = siteContent['cta']['img-src'];
+
+let mainContentAllH4 = document.querySelectorAll('.main-content h4');
+mainContentAllH4[0].textContent = siteContent['main-content']['features-h4'];
+mainContentAllH4[1].textContent = siteContent['main-content']['about-h4'];
+mainContentAllH4[2].textContent = siteContent['main-content']['services-h4'];
+mainContentAllH4[3].textContent = siteContent['main-content']['product-h4'];
+mainContentAllH4[4].textContent = siteContent['main-content']['vision-h4'];
+
+let mainTextContent = document.querySelectorAll('.main-content p');
+mainTextContent[0].textContent = siteContent['main-content']['features-content'];
+mainTextContent[1].textContent = siteContent['main-content']['about-content'];
+mainTextContent[2].textContent = siteContent['main-content']['services-content'];
+mainTextContent[3].textContent = siteContent['main-content']['product-content'];
+mainTextContent[4].textContent = siteContent['main-content']['vision-content'];
+
+let middleImg = document.querySelector('#middle-img');
+middleImg.src = siteContent['main-content']['middle-img-src'];
+
