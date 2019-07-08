@@ -13,3 +13,11 @@ body {
 .redDigit {
   color: red;
 }
+
+.start-button {
+  display: flex;
+}
+
+.stop-button {
+  display: none;
+}
