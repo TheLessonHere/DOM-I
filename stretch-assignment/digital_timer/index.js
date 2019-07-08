@@ -1,13 +1,15 @@
 let button = document.querySelector("button");
+let startbutton = document.querySelector(".start-button");
 let timer = document.querySelector(".digits");
 let msTens = document.querySelector("#msTens")
 let msHundreds = document.querySelector("#msHundreds")
 let secondOnes = document.querySelector("#secondOnes")
 let secondTens = document.querySelector("#secondTens")
-let runningTimer = null;
+var runningTimer;
 
-function buttonClicked(event) {
-    event.preventDefault();
+function buttonClicked() {
+    if (button.classList.contains('start-button')) {
+    button.classList.remove('start-button');
     button.classList.add('stop-button');
     let stopbutton = document.querySelector(".stop-button");
     console.log('stop-button added');
@@ -46,27 +48,26 @@ function buttonClicked(event) {
             }
         }
     }
-
-    let runningTimer = setInterval(upIncrement, 10);
-    
-
-    function resetTimer(event) {
-        event.preventDefault();
-        clearInterval(runningTimer);
-        msTens.textContent = '-';
-        msHundreds.textContent = '-';
-        secondOnes.textContent = '-';
-        secondTens.textContent = '-';
-        stopbutton.classList.add('start-button');
-        let startbutton = document.querySelector(".start-button");
-        console.log('start-button added');
-        startbutton.textContent = "Start";
-        startbutton.classList.remove('stop-button');
-
+    stopbutton.addEventListener('click', resetTimer);
     }
 
-    stopbutton.addEventListener('click', resetTimer);
+    runningTimer = setInterval(upIncrement, 10);
+    
+
+    function resetTimer() {
+        if (button.classList.contains('stop-button')) {
+        clearInterval(runningTimer);
+        msTens.textContent = '0';
+        msHundreds.textContent = '0';
+        secondOnes.textContent = '0';
+        secondTens.textContent = '0';
+        button.classList.remove('stop-button');
+        button.classList.add('start-button');
+        console.log('start-button added');
+        startbutton.textContent = "Start";
+        }
+    }
 }
 
 
-button.addEventListener('click', buttonClicked);
+startbutton.addEventListener('click', buttonClicked);
