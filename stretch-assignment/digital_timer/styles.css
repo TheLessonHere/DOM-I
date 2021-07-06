@@ -2,6 +2,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-flow: column wrap;
 }
 
 .digit {
@@ -11,4 +12,12 @@ body {
 
 .redDigit {
   color: red;
+}
+
+.start-button {
+  display: flex;
+}
+
+.stop-button {
+  display: none;
 }
